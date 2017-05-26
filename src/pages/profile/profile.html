@@ -1,0 +1,95 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img src="assets/images/hr3.jpg" style="filter: blur(4px)!important;"/>
+    <img *ngIf="imageSrc === ''" src="assets/images/avatar.jpg" class="avatar" (click)="openModal()" />
+    <img *ngIf="imageSrc != ''" [src]="imageSrc" class="avatar" (click)="openModal()" />
+    <ion-card-title>
+      White, Victoria D
+    </ion-card-title>
+    <ion-card-title>
+      VP, Investor Services
+    </ion-card-title>
+  </ion-card>
+
+
+  <ion-toolbar no-border-top class="headerColor">
+    <ion-segment [(ngModel)]="prof">
+      <ion-segment-button value="profile">
+        Profile
+      </ion-segment-button>
+      <ion-segment-button value="contact">
+        Contact
+      </ion-segment-button>
+      <ion-segment-button value="service">
+        Service
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <div [ngSwitch]="prof" class="card">
+      <ion-card *ngSwitchCase="'profile'" >
+        <ion-grid>
+        <ion-list>
+          <ion-item>
+            <ion-label>Department: <span>{{profile.department}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Reports To:  <span>{{profile.reportsTo}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Empl Type:  <span>{{profile.emplType}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Comp. Basis:  <span>{{profile.compBasis}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Comp. Rate:  <span>{{profile.compRate}}</span></ion-label>
+          </ion-item>
+        </ion-list>
+        </ion-grid>
+      </ion-card>
+
+      <ion-card *ngSwitchCase="'contact'" >
+        <ion-list>
+          <ion-item>
+            <ion-label>Phone : <span>{{contact.phone}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>E-mail: <span>{{contact.email}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Address:
+              <span>{{contact.address1}}</span>
+              <ion-row><span style="padding-left:80px!important">{{contact.address2}}</span></ion-row>
+              <ion-row><span style="padding-left:80px!important">{{contact.address3}}</span></ion-row>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+
+      <ion-card *ngSwitchCase="'service'">
+        <ion-list>
+          <ion-item>
+            <ion-label>No. of Years: <span>{{service.noYears}}</span></ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>Start Date: <span>{{service.startDate}}</span></ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card>
+
+  </div>
+</ion-content>

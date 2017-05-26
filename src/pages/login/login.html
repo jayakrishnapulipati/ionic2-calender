@@ -1,0 +1,49 @@
+<!--
+  Generated template for the Login page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+
+<ion-content class="getstart" padding>
+
+ 
+  <div id="image2">
+    <img src="./assets/TriNet_Logo.jpg" />
+  </div>
+   
+  <ion-row class="row1">
+    <ion-col>
+      <ion-list>
+
+        <ion-item>
+          <ion-icon name="contact" item-left></ion-icon>
+          <ion-input type="text" placeholder="EMPLOYEE ID" name="empId" [(ngModel)]="user.empId" required 
+         ></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="unlock" item-left></ion-icon>
+          <ion-input type="PASSWORD" placeholder="PASSWORD"  name="password" [(ngModel)]="user.password" required
+          ></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="row2">
+    <ion-col>
+      <button ion-button class="submit-btn" full type="submit" (click)="login(user)">LOGIN</button>
+    </ion-col>
+  </ion-row>
+  <ion-row class="row3">
+    <ion-col>
+      <p>Forgot Password</p>
+    </ion-col>
+  </ion-row>
+  
+
+</ion-content>

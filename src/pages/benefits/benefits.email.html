@@ -1,0 +1,28 @@
+  <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Send Benefit Cards
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+  <ion-list-header>
+      Email your benefit cards 
+  </ion-list-header>
+
+  <ion-item *ngFor="let check of checkItems">
+      <ion-label>{{check.title}}</ion-label>
+      <ion-checkbox checked="check.isChecked" [(ngModel)] ="check.isChecked" (click)="checkedForEmail()"></ion-checkbox>
+    </ion-item> 
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+ <div>
+    <button id="emailFullButton" [disabled]="!buttonStatus" (click)="sendEmail()" class="SendEmailFullButton" ion-button color="blue" full>Send</button>
+</div>
+</ion-footer>
+    

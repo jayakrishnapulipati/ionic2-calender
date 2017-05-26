@@ -1,0 +1,162 @@
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Benefits</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card id="medical" [class.flipped]="isHealthFlipped" (click) = "flipHealthCard()" >
+  <ion-card-header *ngIf="!isHealthFlipped">
+    Medical Card
+  </ion-card-header>
+
+  <ion-card-content *ngIf="!isHealthFlipped">
+  <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Member ID</h6>
+          <p>007</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Plan Name</h6>
+          <p>Complete Health</p>
+     </ion-col>
+  </ion-row>
+    <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Group ID</h6>
+          <p>Code-47</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Effective Date</h6>
+          <p>10/07/2017</p>
+     </ion-col>
+  </ion-row>
+  </ion-card-content>
+    <ion-card-content *ngIf="isHealthFlipped">
+      <ion-row responsive-sm class="back">
+        <ion-col width-50>
+        Member Name :
+        </ion-col>
+        <ion-col width-50>Employee Name</ion-col>
+      </ion-row>
+      <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Valid For :
+        </ion-col>
+        <ion-col width-50>All</ion-col>
+      </ion-row>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card id="dental" [class.flipped]="isDentalFlipped" (click) = "flipDentalCard()">
+  <ion-card-header *ngIf="!isDentalFlipped">
+    Detal Card
+  </ion-card-header>
+   <ion-card-content *ngIf="!isDentalFlipped">
+
+  <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Member ID</h6>
+          <p>007</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Plan Name</h6>
+          <p>Complete Health</p>
+     </ion-col>
+  </ion-row>
+    <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Group ID</h6>
+          <p>Code-47</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Effective Date</h6>
+          <p>10/07/2017</p>
+     </ion-col>
+  </ion-row>
+  </ion-card-content>
+    <ion-card-content *ngIf="isDentalFlipped">
+      <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Member Name :
+        </ion-col>
+        <ion-col width-50>Employee Name</ion-col>
+      </ion-row>
+       <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Parent Name :
+        </ion-col>
+        <ion-col width-50>Father/Mother</ion-col>
+      </ion-row>
+  </ion-card-content>
+</ion-card>
+
+<ion-card id="insurence" [class.flipped]="isInsureFlipped" (click) = "flipInsureCard()">
+  <ion-card-header *ngIf="!isInsureFlipped">
+    Insurence Card
+  </ion-card-header>
+   <ion-card-content *ngIf="!isInsureFlipped">
+
+  <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Member ID</h6>
+          <p>I150</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Plan Name</h6>
+          <p>Complete Insurence</p>
+     </ion-col>
+  </ion-row>
+    <ion-row responsive-sm>
+     <ion-col width-50>
+          <h6>Membership ID</h6>
+          <p>Ins-47</p>
+    </ion-col>
+     <ion-col width-50>
+          <h6>Effective Date</h6>
+          <p>18/05/2016</p>
+     </ion-col>
+  </ion-row>
+  </ion-card-content>
+    <ion-card-content *ngIf="isInsureFlipped">
+       <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Parent Name :
+        </ion-col>
+        <ion-col width-50>Father/Mother</ion-col>
+      </ion-row>
+      <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Member Name :
+        </ion-col>
+        <ion-col width-50>Name</ion-col>
+      </ion-row>
+      <ion-row responsive-sm class="back">
+        <ion-col width-50>
+            Spouse Name :
+        </ion-col>
+        <ion-col width-50>--------</ion-col>
+      </ion-row>
+
+  </ion-card-content>
+</ion-card>
+
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-left>
+      {{ item.title }}
+    </button>
+  </ion-list>
+
+</ion-content>

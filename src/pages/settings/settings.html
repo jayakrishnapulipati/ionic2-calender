@@ -1,0 +1,29 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Settings</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-item>Push Notifications</ion-item>
+  <ion-item>
+    <ion-label>Time off</ion-label>
+    <ion-toggle color="secondary" checked="true"></ion-toggle>
+  </ion-item>
+  <ion-item>Login</ion-item>
+  <ion-item>
+    <ion-label>Enable Touch ID</ion-label>
+    <ion-toggle color="secondary" checked="true"></ion-toggle>
+  </ion-item>
+  <ion-item>Legal</ion-item>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="openNavDetailsPage(item)" icon-left>
+      {{ item.title }}
+    </button>
+  </ion-list>
+</ion-content>
+

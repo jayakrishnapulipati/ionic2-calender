@@ -1,0 +1,75 @@
+<ion-header>
+
+
+  <ion-navbar color="dark">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>workProfile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
+<ion-content >
+  <ion-card class="container">
+    <ion-list>
+      <h1 class="headername">MC</h1>
+     </ion-list>
+    <ion-item class="lbl">
+      <h1>Mario Charless</h1>
+      <h2>IT MANAGER</h2>
+      <h2>SOFTWARE DEVELOPER </h2>
+    </ion-item>
+  </ion-card>
+
+
+
+  <ion-card>
+    <ion-item class="item">
+      <ion-label class="lbl"> <ion-icon name="phone-portrait"></ion-icon></ion-label>
+      <ion-label class="lbl1">{{workemployeedetails.phone}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lbl"><ion-icon name="mail"></ion-icon></ion-label>
+      <ion-label class="lbl1">{{workemployeedetails.mail}}</ion-label>
+    </ion-item>
+    <ion-item><ion-label class="lbl">
+      <ion-icon name="navigate"></ion-icon>
+    </ion-label>
+      <ion-label class="lbl1">{{workemployeedetails.address}}</ion-label>
+    </ion-item>
+
+  </ion-card>
+
+  <ion-card>
+
+          <ion-item>
+            <ion-label class="lbl"><h6>Reports To</h6>
+              <h1>Daneial Ashfoard</h1></ion-label>
+          </ion-item>
+
+    <ion-item>
+      <ion-label class="lbl"><h6>Employee Type</h6>
+        <h1>Full Time</h1></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lbl"><h6>Compensation Basis</h6>
+        <h1>Anuual</h1></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lbl"><h6>Compensation Rate</h6>
+        <h1>$170,888</h1></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label class="lbl"><h6>Start Date</h6>
+        <h1>January 8th,2015</h1>
+      <h6>(16 years,11months)</h6></ion-label>
+    </ion-item>
+
+
+  </ion-card>
+
+</ion-content>

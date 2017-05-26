@@ -1,0 +1,193 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+  </ion-navbar>
+  <!--<div class="main_header">
+    <h4>Dashboard</h4>
+    &lt;!&ndash;<button item-right clear (click)="showMenu()">
+      <ion-icon class="icon icon-md ion-md-menu" (click)="showMenu()" [ngClass]="{'open-menu': isShowMenu}"></ion-icon>
+    </button>&ndash;&gt;
+
+    <a class="button button-clear" (click)="showMenu()">
+      <i class="icon icon-md ion-md-menu"></i>
+    </a>
+  </div>-->
+
+</ion-header>
+
+
+<ion-content >
+<ion-card class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-list>
+
+
+
+            <div class="current" [ngStyle]="getOverlayStyle()"><ion-label class="labl"><p>{{ current}}</p><h5> hrs</h5></ion-label><ion-label></ion-label>Sick<ion-label></ion-label></div>
+
+
+                <round-progress
+                                [current]="current"
+                                [max]="max"
+                                [stroke]="stroke"
+                                [radius]="radius"
+                                [semicircle]="semicircle"
+                                [rounded]="rounded"
+                                [responsive]="responsive"
+                                [clockwise]="clockwise"
+                                [color]="gradient ? 'url(#gradient)' : color"
+                                [background]="background"
+                                [duration]="duration"
+                                [animation]="animation"
+                                [animationDelay]="animationDelay"></round-progress>
+
+
+
+
+          </ion-list></ion-col>
+        <ion-col col-6 >
+          <ion-item class="sickhrs">
+          <p>{{earned}}hrs</p>
+          <h4>Earned YTD</h4>
+          <p>{{taken}}hrs</p>
+          <h4>Taken YTD</h4>
+          <p>{{actual}}hrs/year</p>
+          <h4>Accural rate</h4>
+          <p>{{accural}}hrs</p>
+          <h4>Accural Cap</h4>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <ion-label><ion-icon name="ios-create-outline" class="outlin"> <a href="#" class="anchor">view Time Off</a></ion-icon></ion-label>
+</ion-card>
+
+
+
+  <ion-card class="container">
+    <ion-grid>
+      <ion-row class="paychecks">
+        <ion-col col-6>
+          <ion-list>
+              <div class="dateClnder">
+                <h4>Last Check</h4>
+                <div class="dateAndMonth">
+                  <h5>Jun</h5>
+                  <div class="date"><span>30</span></div>
+                </div>
+                <h4>90 days ago</h4>
+              </div>
+
+            <div class="border">&nbsp;</div>
+          </ion-list></ion-col>
+
+
+
+        <ion-col col-6 >
+          <ion-list>
+            <div class="dateClnder">
+              <h4>Last Check</h4>
+              <div class="dateAndMonth">
+                <h5>Jun</h5>
+                <div class="date"><span>30</span></div>
+              </div>
+              <h4>90 days ago</h4>
+            </div>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-label><ion-icon name="ios-create-outline" class="outlin"> <a href="#" class="anchor">Last Pay Check</a></ion-icon></ion-label>
+  </ion-card>
+
+
+
+
+
+  <ion-card class="container">
+
+    <ion-label class="labl" col-12>View Expenses</ion-label>
+
+  </ion-card>
+
+
+
+
+
+
+  <ion-card class="container">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+          <ion-list>
+            <ion-icon name="contact" class="avatar"></ion-icon>
+          </ion-list></ion-col>
+
+
+        <ion-col col-6>
+          <ion-list class="company">
+            <ion-label class="labl">Company Directory</ion-label>
+            <ion-label>Passco Company's , LLC</ion-label>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <!--<ion-list>
+
+   </ion-list>-->
+    </ion-card>
+
+
+
+
+
+
+  <ion-card class="container">
+    <ion-grid>
+      <ion-row class="paychecks">
+        <ion-col col-6 >
+          <ion-list>
+            <div >
+              <div class="dateClnder">
+                <div class="dateAndMonth">
+                  <h5>Nov</h5>
+                  <div class="date"><span>26</span></div>
+                </div>
+              </div>
+            </div>
+
+          </ion-list>
+       </ion-col>
+
+
+         <ion-label class="nxtPaycheck">Next Company Holiday Is November 26</ion-label><ion-col col-6></ion-col>
+
+
+      </ion-row></ion-grid>
+    <ion-label><ion-icon name="ios-calendar-outline" class="outlin"> <a href="#" class="anchor">Holiday Calendar</a></ion-icon></ion-label>
+  </ion-card>
+
+
+
+
+
+
+
+
+
+  <svg>
+    <linearGradient id="gradient" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="5%" stop-color="green"/>
+      <stop offset="95%" stop-color="gold"/>
+    </linearGradient>
+  </svg>
+</ion-content>

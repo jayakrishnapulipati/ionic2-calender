@@ -1,0 +1,23 @@
+employee{
+  ion-img {
+    display: inline-block;
+    min-width: 126px;
+    min-height: 20px;
+    background: #eee;
+    contain: strict;
+    float: left;
+    margin-left: 35%;
+    border-radius: 50%;
+    margin-top:5%;
+  }
+img{
+  border-radius: 50%;
+}
+  .lbl{
+    text-align:center;
+    color:dodgerblue;
+  }
+  ion-label{
+    text-align:center;
+  }
+}

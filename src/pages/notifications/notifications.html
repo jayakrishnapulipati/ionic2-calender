@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Notifications
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    
+    <a ion-item (click)="openModal({charNum: 0})">
+      E-Mail(client)
+    </a>
+    <a ion-item (click)="openModal({charNum: 1})">
+      E-Mail(office)
+    </a>
+    <a ion-item (click)="openModal({charNum: 2})">
+      Message(client)
+    </a>
+    <a ion-item (click)="openModal({charNum: 3})">
+      Message(office)
+    </a>
+  
+  </ion-list>
+
+</ion-content>

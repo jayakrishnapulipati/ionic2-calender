@@ -1,0 +1,336 @@
+
+dashboard {
+  .dashhead {
+    text-align: center;
+    background-color: #0c60ee;
+    color: white;
+  }
+  .toolbar-title-md {
+    padding: 0 12px;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+  }
+  ion-navbar{
+    background-color: #e37222;
+}
+
+.toolbar-background-md {
+    border-color: #b2b2b2;
+    background: black !important;
+  }
+
+
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #fafafa;
+  }
+
+  h2 {
+    margin: 0 0 40px;
+  }
+
+  .cf:before,
+  .cf:after {
+    content: ' ';
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  .progress-wrapper {
+    position: relative;
+    margin: 20px auto;
+    font-size: 40px;
+  }
+
+  .current {
+    position: absolute;
+    color: #bbb;
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  round-progress {
+    margin: auto;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 650px;
+    margin: 40px auto 80px;
+    text-align: center;
+    padding: 40px;
+    background: #fff;
+    border: solid 1px #ccc;
+    border-radius: 4px;
+  }
+
+  button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #45ccce;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 5px 5px 0;
+  }
+
+  form {
+    text-align: left;
+    max-width: 350px;
+    margin: 30px auto;
+  }
+
+  form > div {
+    margin-bottom: 15px;
+  }
+
+  input, select {
+    float: right;
+    padding: 5px;
+    width: 150px;
+  }
+
+  input[type='checkbox'] {
+    width: auto;
+  }
+
+  input[type='color'] {
+    height: 30px;
+  }
+
+  .back {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+  }
+
+  .loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    font-size: 3em;
+    color: #bbb;
+  }
+
+  @media (max-width: 650px) {
+    body {
+      padding: 12.5px;
+    }
+
+    .back {
+      position: static;
+      display: block;
+      text-align: center;
+    }
+
+    h2, .back {
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      margin-top: 5px;
+      float: none;
+    }
+
+    .container {
+      margin: 0 auto 50px;
+      padding: 25px;
+    }
+
+  }
+
+  .grid {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-bottom: 1px solid silver;
+  }
+  demo .item-md {
+    position: relative;
+    padding-right: 0;
+    padding-left: 16px;
+    font-size: 1.6rem;
+    font-weight: normal;
+    text-transform: none;
+    /* border-bottom: 1px solid silver !important; */
+    color: #000;
+    background-color: #fff;
+    box-shadow: none;
+    transition: background-color;
+  }
+
+  .anchor {
+    display: inline;
+    vertical-align: middle;
+    padding-left: 10px;
+    color: orange;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  ion-icon {
+    display: inline-block;
+    font-size: 4.2em;
+    color: orange;
+  }
+  .right {
+    float: right;
+  }
+
+  * {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .paychecks {
+    padding: 10px;
+  }
+  .paychecks .dateClnder {
+    text-align: center;
+  }
+  .paychecks .dateClnder:not(:last-child) {
+    border-right: 1px solid silver;
+  }
+  .paychecks .dateClnder > h4 {
+    color: #444343;
+    margin: 0;
+    font-weight: normal;
+  }
+  .paychecks .dateAndMonth {
+    border: 1px solid #444343;
+    width: 70%;
+    margin: 10px auto;
+  }
+  .paychecks .dateAndMonth h5 {
+    background: #ddd;
+    margin: 0;
+    padding: 5px;
+    color: #fff;
+  }
+  .paychecks .date span {
+    font-weight: bold;
+    display: inline-block;
+    font-size: 30px;
+  }
+  .border {
+    border-right: 1px solid silver;
+  }
+.labl{
+  color: dodgerblue;
+}
+  .labl p{
+    color: dodgerblue;
+    display:inline;
+    float:left;
+    vertical-align: middle;
+    font-size: 25px;
+  }
+.labl h5{
+  display:inline;
+  float:left;
+  vertical-align: middle;
+  color:silver;
+  font-size: 25px;
+}
+  .outlin {
+    display: inline;
+    vertical-align: middle;
+    font-size: 4.2em;
+    color: orange;
+  }
+
+
+
+  .avatar{
+    display:inline;
+    font-size: 7.2em;
+    color: gray;
+    vertical-align:middle;
+    float:left;
+    margin-left: 13%;
+
+  }
+  .avatarinfo{
+    float:left;
+    display:inline;
+    vertical-align:top;
+    padding-left:80px;
+    color:dodgerblue;
+
+  }
+
+.company{
+  float:left;
+ text-align: left;
+}
+.nxtPaycheck{
+  display:inline;
+
+  vertical-align:top;
+
+  padding-top:20px ;
+}
+.sickhrs{
+  text-align: right;
+}
+  .sickhrs p{
+    color:gray;
+    font-weight:bold;
+  }
+  .sickhrs h4{
+    color:silver;
+  }
+  .card-md p {
+    text-align:right !important;
+  }
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .bar-buttons bar-buttons-md bar-button bar-button-md bar-button-default bar-button-default-md bar-button-menutoggle bar-button-menutoggle-md{
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  }
+  .main_header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #000;
+    color: #fff;
+    h4{
+      order: 2;
+    }
+    ion-icon{
+      padding: 0 6px;
+      font-size: 2.4rem;
+      order: 1;
+    }
+  }
+}
+
+@media only screen and(max-device-width : 768px){
+  .main_header {
+    justify-content: space-between;
+    h4{
+      order: 1;
+    }
+    ion-icon{
+      order: 2;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+page-login {
+    .getstart {
+
+            background: url('../assets/employee1.jpg');
+            background-repeat: no-repeat;
+            background-size:cover;
+            
+    }
+  #image2 img{
+      position: absolute;
+      top:5%;
+  }
+  .row1{
+       
+       top:50%;
+       position: relative;
+      
+  }
+  
+  .row2{
+       
+       top:50%;
+       position: relative;
+      
+  }
+  .row3{
+       
+       top:50%;
+       position: relative;
+       text-align: center;
+       color:orangered;
+       font-size: 15px;
+  }
+  ion-list{
+      border:1px solid lightgray;
+  }
+  .submit-btn{
+      background-color: #e37222;
+      color:white;
+  }
+    
+
+}
+
+

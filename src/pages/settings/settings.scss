@@ -1,0 +1,40 @@
+page-settings {
+ .toolbar-background-md {
+    border-color: #b2b2b2;
+    background: black !important;
+  }
+  .toolbar-title-md {
+    font-size: 2rem;
+    color: white !important;
+  }
+  .bar-button-default-md {
+    color: white !important;
+    background-color: transparent;
+  }
+
+  .item-md {
+    padding-left: 0px!important;
+    background: whitesmoke !important;
+    border-bottom: 1px solid silver !important;
+    color:darkgrey!important;
+
+  }
+  .label-md {
+    padding-left: 16px !important;
+  }
+  .item-toggle{
+    color:black!important;
+    background: white !important;
+
+  }
+  .item-md.item-block .item-inner {
+    padding-right: 8px;
+    /*border-bottom: none !important;*/
+  }
+  ion-list .item-md {
+    padding-left: 0px!important;
+    background: white !important;
+    border-bottom: 1px solid silver !important;;
+    color:black!important;
+  }
+}

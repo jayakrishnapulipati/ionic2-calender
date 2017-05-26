@@ -1,0 +1,214 @@
+<!--<ng-template #modalContent let-close="close">
+  <div class="modal-header">
+    <h5 class="modal-title">Event action occurred</h5>
+    <button type="button" class="close" (click)="close()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div>
+      Action:
+      <pre>{{ modalData?.action }}</pre>
+    </div>
+    <div>
+      Event:
+      <pre>{{ modalData?.event | json }}</pre>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="close()">OK</button>
+  </div>
+</ng-template>-->
+
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Calendar</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-label ><div class="peopleHr">Payroll Dashboard-</div></ion-label>
+    </ion-row>
+  </ion-grid>
+  <ion-card class="container">
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-select #selected [(ngModel)]="companyDesc" (ngModelChange)="selectCompany(companyDesc)">
+        <ion-option *ngFor="let company of list;let i=index" value="{{company.orgDesc}}"   class="select">
+          {{company.orgDesc}}
+        </ion-option>
+      </ion-select>
+
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="col1">
+    <ion-icon name="arrow-dropleft"
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate">
+
+    </ion-icon></ion-col>
+      <ion-col class="col2">
+      <ion-label
+        mwlCalendarToday
+        [(viewDate)]="viewDate">
+        {{ viewDate | calendarDate:(view + 'ViewTitle'):'en'}}
+      </ion-label></ion-col>
+      <ion-col class="col3">
+    <ion-icon name="arrow-dropright"
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate">
+
+    </ion-icon>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  <!--<div class="col-md-4" id="month">
+    <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en'}}</h3>
+  </div>-->
+  <!--<div class="col-md-4">
+    <div class="btn-group">
+      <button ion-button class="button1"
+        (click)="view = 'month'"
+        [class.active]="view === 'month'">
+        Month
+      </button>
+      <button ion-button class="button2"
+        (click)="view = 'week'"
+        [class.active]="view === 'week'">
+        Week
+      </button>
+      <button ion-button class="button1"
+        (click)="view = 'day'"
+        [class.active]="view === 'day'">
+        Day
+      </button>
+    </div>
+  </div>-->
+
+<br>
+<ng-template #customCellTemplate let-day="day" let-locale="locale">
+  <div class="cal-cell-top">
+    <span class="cal-day-badge" *ngIf="day.badgeTotal > 0">{{ day.badgeTotal }}</span>
+    <span class="cal-day-number">{{ day.date | calendarDate:'monthViewDayNumber':locale }}</span>
+  </div>
+  <div *ngFor="let payCheck of day.events">
+    <small [ngClass]="(payCheck.start && payCheck.end) ? 'start_date' : 'end_date'" *ngIf="day.events.length">{{payCheck.start && payCheck.end ? 'End' : 'Start'}}</small>
+  </div>
+</ng-template>
+<div [ngSwitch]="view">
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    [cellTemplate]="customCellTemplate"
+    [activeDayIsOpen]="activeDayIsOpen"
+    (dayClicked)="dayClicked($event.day)"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-month-view>
+ <!-- <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [refresh]="refresh"
+    (eventClicked)="handleEvent('Clicked', $event.event)"
+    (eventTimesChanged)="eventTimesChanged($event)">
+  </mwl-calendar-day-view>-->
+</div>
+
+  </ion-card>
+</ion-content>
+
+<!--
+<h3>
+  Edit events
+  <button
+    class="btn btn-primary pull-right"
+    (click)="addEvent()">
+    Add new
+  </button>
+  <div class="clearfix"></div>
+</h3>
+
+<table class="table table-bordered">
+
+  <thead>
+  <tr>
+    <th>Title</th>
+    <th>Primary color</th>
+    <th>Secondary color</th>
+    <th>Starts at</th>
+    <th>Ends at</th>
+    <th>Remove</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let event of events; let index = index">
+    <td>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="event.title"
+        (keyup)="refresh.next()">
+    </td>
+    <td>
+      <input
+        type="color"
+        [(ngModel)]="event.color.primary"
+        (change)="refresh.next()">
+    </td>
+    <td>
+      <input
+        type="color"
+        [(ngModel)]="event.color.secondary"
+        (change)="refresh.next()">
+    </td>
+    <td>
+      <mwl-demo-utils-date-time-picker
+        [(date)]="event.start"
+        (dateChange)="refresh.next()"
+        placeholder="Not set">
+      </mwl-demo-utils-date-time-picker>
+    </td>
+    <td>
+      <mwl-demo-utils-date-time-picker
+        [(date)]="event.end"
+        (dateChange)="refresh.next()"
+        placeholder="Not set">
+      </mwl-demo-utils-date-time-picker>
+    </td>
+    <td>
+      <button
+        class="btn btn-danger"
+        (click)="events.splice(index, 1); refresh.next()">
+        Delete
+      </button>
+    </td>
+  </tr>
+  </tbody>
+
+</table>
+-->
